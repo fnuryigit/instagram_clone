@@ -1,4 +1,4 @@
-/* Navbar */
+
 .navbar {
   position: sticky;
   top: 0;
@@ -8,13 +8,13 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Body */
+
 body {
   padding-top: 54px;
-  background-color: #fafafa; /* Instagram tarzı açık gri */
+  background-color: #fafafa; 
 }
 
-/* Logo sola 192px margin */
+
 .logo {
   margin-left: 192px;
 }
@@ -27,11 +27,11 @@ body {
   color: #262626;
 }
 
-/* Arama kutusu */
+
 .search-bar {
   display: flex;
   align-items: center;
-  margin-left: 5rem; /* Soldan 5 birim */
+  margin-left: 5rem; 
   width: 200px;
 }
 
@@ -40,47 +40,46 @@ body {
   padding: 5px 10px;
 }
 
-/* Arama kutusundaki placeholder'a ikon */
 .search-input::placeholder {
-  background-image: url('assets/search-icon.png'); /* Kendi arama ikonu yolun */
+  background-image: url('assets/search-icon.png'); 
   background-repeat: no-repeat;
   background-position: 5px center;
   padding-left: 25px;
 }
 
-/* Sağ üst menü */
+
 .menu-icons {
   display: flex;
   align-items: center;
-  margin-left: 5rem; /* Soldan 5 birim */
-  margin-top: 2rem; /* Üstten 2 birim */
+  margin-left: 5rem; 
+  margin-top: 2rem; 
 }
 
-/* Menü responsive gizleme */
+
 @media (max-width: 576px) {
   .menu-icons {
     display: none !important;
   }
 }
 
-/* Menü ikonları */
+
 .menu-icons i {
   font-size: 18px;
   cursor: pointer;
-  color: #262626 !important; /* Koyu gri */
+  color: #262626 !important; 
   margin: 0 8px;
 }
 
 .menu-icons i:hover {
-  color: #000 !important; /* Hover siyah */
+  color: #000 !important; 
 }
 
-/* Orta alan sütunu */
+
 .col-lg-7 {
-  margin-top: 2rem; /* Üstten 2 birim */
+  margin-top: 2rem; 
 }
 
-/* Orta alan responsive grid */
+
 @media (max-width: 991.98px) {
   .col-lg-7 {
     margin-top: 2rem;
@@ -88,44 +87,44 @@ body {
   }
 }
 
-/* Middlearea max height */
+
 .middlearea {
   max-height: 200px !important;
   overflow-y: auto;
 }
 
-/* Card */
+
 .card {
   margin-bottom: 20px;
 }
 
-/* Card header ve footer */
+
 .card-header,
 .card-footer {
   background-color: white;
   border: none;
 }
 
-/* Beğenme, yorum, paylaşma ikonları */
+
 .icon-button {
   border: none;
   background: none;
   cursor: pointer;
 }
 
-/* Bookmark ikonuna sağdan 7 birim margin */
+
 .icon-button.fa-bookmark {
   margin-right: 1.75rem;
 }
 
-/* Yorum paylaş metnini sağa hizala */
+
 .comment {
   padding: 10px;
   color: gray;
   text-align: right;
 }
 
-/* Story container */
+
 .story-container {
   max-width: 600px;
   margin: 0 auto 20px auto;
@@ -137,7 +136,7 @@ body {
   white-space: nowrap;
 }
 
-/* Story item */
+
 .story-item {
   display: inline-block;
   width: 80px;
@@ -156,7 +155,7 @@ body {
   border-image-source: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
 
-/* Sağ sidebar */
+
 .sidebar {
   background-color: white;
   border-radius: 10px;
@@ -167,13 +166,12 @@ body {
   height: fit-content;
 }
 
-/* Sağ panel beyaz ve border yok (rightpanel) */
 .rightpanel {
   background-color: white;
   border: none;
 }
 
-/* Profil */
+
 .sidebar .profile {
   display: flex;
   align-items: center;
@@ -191,7 +189,7 @@ body {
   font-weight: 600;
 }
 
-/* Öneriler başlığı */
+
 .sidebar .suggestions-header {
   display: flex;
   justify-content: space-between;
@@ -202,7 +200,7 @@ body {
   font-size: 14px;
 }
 
-/* Tümünü gör sağa al */
+
 .sidebar .suggestions-header a {
   font-size: 12px;
   color: #262626;
@@ -212,7 +210,7 @@ body {
   float: right;
 }
 
-/* Öneri öğeleri */
+
 .sidebar .suggestion-item {
   display: flex;
   align-items: center;
@@ -237,7 +235,7 @@ body {
   font-size: 14px;
 }
 
-/* Takip et butonu */
+
 .sidebar .btn-follow {
   font-size: 12px;
   font-weight: 600;
@@ -248,7 +246,7 @@ body {
   padding: 0;
 }
 
-/* Hikayelerde isim font ayarı */
+
 .story-item p {
   margin-top: 5px;
   font-size: 12px;
@@ -256,7 +254,7 @@ body {
   font-weight: 700 !important;
 }
 
-/* Menü simgeleri */
+
 .navbar .nav-link i {
   color: #262626;
 }
