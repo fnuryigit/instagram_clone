@@ -1,0 +1,266 @@
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 54px;
+  background-color: white !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Body */
+body {
+  padding-top: 54px;
+  background-color: #fafafa; /* Instagram tarzı açık gri */
+}
+
+/* Logo sola 192px margin */
+.logo {
+  margin-left: 192px;
+}
+
+.logo h4 {
+  font-family: 'Pacifico', cursive;
+  font-weight: normal;
+  font-size: 28px;
+  margin: 0;
+  color: #262626;
+}
+
+/* Arama kutusu */
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-left: 5rem; /* Soldan 5 birim */
+  width: 200px;
+}
+
+.search-input {
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+/* Arama kutusundaki placeholder'a ikon */
+.search-input::placeholder {
+  background-image: url('assets/search-icon.png'); /* Kendi arama ikonu yolun */
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  padding-left: 25px;
+}
+
+/* Sağ üst menü */
+.menu-icons {
+  display: flex;
+  align-items: center;
+  margin-left: 5rem; /* Soldan 5 birim */
+  margin-top: 2rem; /* Üstten 2 birim */
+}
+
+/* Menü responsive gizleme */
+@media (max-width: 576px) {
+  .menu-icons {
+    display: none !important;
+  }
+}
+
+/* Menü ikonları */
+.menu-icons i {
+  font-size: 18px;
+  cursor: pointer;
+  color: #262626 !important; /* Koyu gri */
+  margin: 0 8px;
+}
+
+.menu-icons i:hover {
+  color: #000 !important; /* Hover siyah */
+}
+
+/* Orta alan sütunu */
+.col-lg-7 {
+  margin-top: 2rem; /* Üstten 2 birim */
+}
+
+/* Orta alan responsive grid */
+@media (max-width: 991.98px) {
+  .col-lg-7 {
+    margin-top: 2rem;
+    margin-left: 0 !important;
+  }
+}
+
+/* Middlearea max height */
+.middlearea {
+  max-height: 200px !important;
+  overflow-y: auto;
+}
+
+/* Card */
+.card {
+  margin-bottom: 20px;
+}
+
+/* Card header ve footer */
+.card-header,
+.card-footer {
+  background-color: white;
+  border: none;
+}
+
+/* Beğenme, yorum, paylaşma ikonları */
+.icon-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Bookmark ikonuna sağdan 7 birim margin */
+.icon-button.fa-bookmark {
+  margin-right: 1.75rem;
+}
+
+/* Yorum paylaş metnini sağa hizala */
+.comment {
+  padding: 10px;
+  color: gray;
+  text-align: right;
+}
+
+/* Story container */
+.story-container {
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* Story item */
+.story-item {
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+  margin-right: 15px;
+}
+
+.story-item img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  padding: 2px;
+  background: white;
+  border: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* Sağ sidebar */
+.sidebar {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 64px;
+  height: fit-content;
+}
+
+/* Sağ panel beyaz ve border yok (rightpanel) */
+.rightpanel {
+  background-color: white;
+  border: none;
+}
+
+/* Profil */
+.sidebar .profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.sidebar .profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.sidebar .profile .username {
+  font-weight: 600;
+}
+
+/* Öneriler başlığı */
+.sidebar .suggestions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #8e8e8e;
+  font-size: 14px;
+}
+
+/* Tümünü gör sağa al */
+.sidebar .suggestions-header a {
+  font-size: 12px;
+  color: #262626;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  float: right;
+}
+
+/* Öneri öğeleri */
+.sidebar .suggestion-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sidebar .suggestion-item .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .suggestion-item img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.sidebar .suggestion-item .username {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Takip et butonu */
+.sidebar .btn-follow {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0095f6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Hikayelerde isim font ayarı */
+.story-item p {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #262626;
+  font-weight: 700 !important;
+}
+
+/* Menü simgeleri */
+.navbar .nav-link i {
+  color: #262626;
+}
+
+.navbar .nav-link i:hover {
+  color: #000;
+}

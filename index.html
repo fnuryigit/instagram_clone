@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instagram</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 54px;
+      background-color: white !important;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      padding-top: 54px;
+      background-color: #fafafa;
+    }
+
+    .icon-button {
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    .comment {
+      padding: 10px;
+      color: gray;
+    }
+
+    .logo h4 {
+      font-family: 'Segoe UI', sans-serif;
+      font-weight: bold;
+    }
+
+    .search-bar {
+      width: 200px;
+    }
+
+    .search-input {
+      font-size: 14px;
+      padding: 5px 10px;
+    }
+
+    .search-input::placeholder {
+      background-repeat: no-repeat;
+      background-position: 5px center;
+      padding-left: 25px;
+    }
+
+    .menu-icons i {
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .card-header,
+    .card-footer {
+      background-color: white;
+      border: none;
+    }
+
+    /* Storyler */
+    .story-container {
+      padding: 10px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow-x: auto;
+      white-space: nowrap;
+      margin-bottom: 20px;
+    }
+
+    .story-item {
+      display: inline-block;
+      width: 80px;
+      text-align: center;
+      margin-right: 15px;
+    }
+
+    .story-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    /* Sağ sidebar stilleri */
+    .sidebar {
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 64px; /* navbar 54px + biraz boşluk */
+      height: fit-content;
+    }
+
+    .sidebar .profile {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .sidebar .profile img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+
+    .sidebar .profile .username {
+      font-weight: 600;
+    }
+
+    .sidebar .suggestions-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #8e8e8e;
+      font-size: 14px;
+    }
+
+    .sidebar .suggestions-header a {
+      font-size: 12px;
+      color: #262626;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .sidebar .suggestion-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .sidebar .suggestion-item .user-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar .suggestion-item img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .sidebar .suggestion-item .username {
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .sidebar .btn-follow {
+      font-size: 12px;
+      font-weight: 600;
+      color: #0095f6;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+     .story-container {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-bottom: 20px;
+  }
+
+  .story-item {
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    margin-right: 15px;
+  }
+
+  .story-border {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .story-border img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    padding: 2px;
+    display: block;
+  }
+
+  .story-item p {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #262626;
+    }
+   .sidebar .username {
+  font-weight: 700 !important;
+   }
+   .story-item p {
+  font-weight: 700 !important;
+  } 
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container d-flex justify-content-between align-items-center">
+      <!-- Sol: Logo -->
+      <div class="logo">
+        <h4 class="mb-0">Instagram</h4>
+      </div>
+
+      <!-- Orta: Arama Kutusu -->
+      <form class="d-flex search-bar" role="search">
+        <input
+          class="form-control me-2 search-input"
+          type="search"
+          placeholder="Ara"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Ara</button>
+      </form>
+
+      <!-- Sağ: İkonlar -->
+      <div class="d-none d-sm-flex align-items-center menu-icons">
+        <a href="#"><i class="fa-solid fa-house mx-2"></i></a>
+        <a href="#"><i class="fa-regular fa-message mx-2"></i></a>
+        <a href="#"><i class="fa-regular fa-compass mx-2"></i></a>
+        <a href="#"><i class="fa-regular fa-heart mx-2"></i></a>
+        <a href="#"><img src="profile-pic.png" width="30" class="rounded-circle mx-2" alt="profil" /></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+    <div class="row gx-4">
+      <!-- Orta sütun: Story + Postlar -->
+      <div class="col-lg-7">
+        <!-- Storyler yukarıda -->
+        <div class="story-container">
+          <div class="story-item">
+             <div class="story-border">
+            <img src="images/p01.jpg" alt="Nur" />
+             </div>
+            <p class="small mt-1">Nur</p>
+          </div>
+         
+
+    
+          <div class="story-item">
+            <div class="story-border">
+            <img src="images/p02.jpg" alt="Ali" />
+            </div>
+            <p class="small mt-1">Ali</p>
+          </div>
+
+          <div class="story-item">
+            <div class="story-border">
+            <img src="images/p03.jpg" alt="Mehmet" />
+            </div>
+            <p class="small mt-1">Mehmet</p>
+          </div>
+
+          <div class="story-item">
+            <div class="story-border">
+            <img src="images/p04.jpg" alt="Zeynep" />
+            </div>
+            <p class="small mt-1">Zeynep</p>
+          </div>
+
+          <div class="story-item">
+            <div class="story-border">
+            <img src="images/p05.jpg" alt="Emre" />
+            </div>
+            <p class="small mt-1">Emre</p>
+          </div>
+
+          <div class="story-item">
+            <div class="story-border">
+            <img src="images/p06.jpg" alt="Aslı" />
+            </div>
+            <p class="small mt-1">Aslı</p>
+          </div>
+
+          <div class="story-item">
+            <div class="story-border">
+            <img src="images/kodluyoruz.png" alt="Kodluyoruz" />
+            </div>
+            <p class="small mt-1">Kodluyoruz</p>
+          </div>
+        </div>
+
+        <!-- Post 1 -->
+   <div class="card mb-3">
+  <!-- Post Header -->
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <img src="images/kodluyoruz.png" class="rounded-circle" width="40" height="40" alt="Kodluyoruz" />
+      <span class="fw-bold ms-2">Kodluyoruz</span>
+    </div>
+    <i class="fa-solid fa-ellipsis"></i>
+  </div>
+
+  <!-- Post Image -->
+  <img src="images/post_1.png" class="w-100" alt="post" />
+
+  <!-- Action Buttons -->
+  <div class="card-body pb-2">
+    <div class="d-flex justify-content-between">
+      <div>
+        <i class="fa-regular fa-heart icon-button me-2"></i>
+        <i class="fa-regular fa-comment icon-button me-2"></i>
+        <i class="fa-regular fa-paper-plane icon-button"></i>
+      </div>
+      <i class="fa-regular fa-bookmark icon-button"></i>
+    </div>
+
+    <!-- Like Count -->
+    <p class="fw-bold mb-1 mt-2">120 kişi beğendi</p>
+
+    <!-- Main Comment -->
+    <p class="mb-1">
+      <span class="fw-bold">ahmet_01</span> Ne zaman başlıyor?
+    </p>
+
+    <!-- View More Comments -->
+    <p class="text-muted mb-1" style="cursor:pointer;">Diğer 7 yorumu gör</p>
+
+
+    <!-- Add Comment -->
+    <div class="d-flex align-items-center border-top pt-2">
+      <input type="text" class="form-control border-0 p-0" placeholder="Yorum ekle..." />
+      
+    </div>
+  </div>
+</div>
+
+
+
+        <!-- Post 2 -->
+    <div class="card mb-3">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <img src="profile-pic.png" class="rounded-circle" width="40" height="40" alt="fnuryigit" />
+      <span class="fw-bold ms-2">fnuryigit</span>
+    </div>
+    <i class="fa-solid fa-ellipsis"></i>
+  </div>
+
+  <img src="images/post_2.jpeg" class="w-100" alt="post" />
+
+  <div class="card-body d-flex justify-content-between">
+    <div>
+      <i class="fa-regular fa-heart icon-button"></i>
+      <i class="fa-regular fa-comment icon-button"></i>
+      <i class="fa-regular fa-paper-plane icon-button"></i>
+    </div>
+    <i class="fa-regular fa-bookmark icon-button"></i>
+  </div>
+
+  <!-- Beğeni sayısı -->
+  <p class="fw-bold ms-3 mb-1">234 kişi beğendi</p>
+
+  <!-- Yorumlar -->
+  <p class="ms-3 mb-1"><span class="fw-bold">ayse_dmr</span> Muhteşem 😍</p>
+  <p class="text-muted ms-3 mb-2" style="cursor:pointer;">diğer 23 yorumu gör</p>
+
+  <!-- Yorum yapma alanı -->
+  <p class="comment ms-3 mb-2 text-muted">Yorum Ekle...</p>
+</div>
+
+
+
+        <!-- Post 3 -->
+       <div class="card mb-3">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <img src="images/p04.jpg" class="rounded-circle me-2" width="40" height="40" />
+      <strong>Zeynep</strong>
+    </div>
+    <i class="fa-solid fa-ellipsis"></i>
+  </div>
+
+  <img src="images/post_3.jpg" class="w-100" alt="post" />
+
+  <div class="card-body d-flex justify-content-between">
+    <div>
+      <i class="fa-regular fa-heart icon-button"></i>
+      <i class="fa-regular fa-comment icon-button"></i>
+      <i class="fa-regular fa-paper-plane icon-button"></i>
+    </div>
+    <i class="fa-regular fa-bookmark icon-button"></i>
+  </div>
+
+  <!-- Beğeni sayısı -->
+  <div class="px-3">
+    <strong>345 kişi beğendi</strong>
+  </div>
+
+  <!-- Yorum -->
+  <div class="px-3">
+    <strong>Zeynep</strong> aa çok tatlı
+  </div>
+
+  <!-- Diğer yorumları gör -->
+  <div class="px-3 text-muted" style="cursor: pointer;">
+    diğer 17 yorumu gör
+  </div>
+
+  <p class="comment px-3 mt-2 text-muted">Yorum Ekle...</p>
+</div>
+
+      </div>
+
+      <!-- Sağ sütun: Profil ve öneriler -->
+      <div class="col-lg-5">
+        <div class="sidebar">
+          <div class="profile">
+            <img src="profile-pic.png" alt="Profil Resmi" />
+            <div class="username">fnuryigit</div>
+          </div>
+
+          <div class="suggestions-header">
+            <div>Senin için önerilenler</div>
+            <a href="#">Tümünü Gör</a>
+          </div>
+
+          <div class="suggestion-item">
+            <div class="user-info">
+              <img src="images/coderspace.png" alt="Coderspace" />
+              <div class="username">Coderspace</div>
+            </div>
+            <button class="btn-follow">Takip Et</button>
+          </div>
+
+          <div class="suggestion-item">
+            <div class="user-info">
+              <img src="images/coderspace.png" alt="Gen" />
+              <div class="username">Gen</div>
+            </div>
+            <button class="btn-follow">Takip Et</button>
+          </div>
+
+          <div class="suggestion-item">
+            <div class="user-info">
+              <img src="images/kodla.png" alt="Kodla" />
+              <div class="username">Kodla</div>
+            </div>
+            <button class="btn-follow">Takip Et</button>
+          </div>
+
+          <div class="suggestion-item">
+            <div class="user-info">
+              <img src="images/ogrenci_kariyeri.jpg" alt="Ogrencikariyeri" />
+              <div class="username">Ogrencikariyeri</div>
+            </div>
+            <button class="btn-follow">Takip Et</button>
+          </div>
+
+          <div class="suggestion-item">
+            <div class="user-info">
+              <img src="images/talent_coders.jpeg" alt="Talentcoders" />
+              <div class="username">Talentcoders</div>
+            </div>
+            <button class="btn-follow">Takip Et</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
