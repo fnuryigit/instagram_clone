@@ -13,5 +13,4 @@ Projede HTML, CSS ve Bootstrap bileşenleri kullanılmıştır.
 Projenin GitHub Pages üzerinden yayınlanan haline buradan ulaşabilirsiniz:  
 [https://fnuryigit.github.io/instagram_clone/](https://fnuryigit.github.io/instagram_clone/)
 
-## Ekran Görüntüsü
-![Instagram Clone Ekran Görüntüsü](images/post_1.png)
+
